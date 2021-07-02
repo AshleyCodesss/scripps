@@ -4441,6 +4441,39 @@ function TypeWord(Pattern)
     Typing = false
 end
 
+do
+    local Window = library:AddWindow("Word Bomb", {
+        main_color = Color3.fromRGB(41, 74, 122),
+        min_size = Vector2.new(500, 150),
+        toggle_key = Enum.KeyCode.RightShift,
+        can_resize = true
+    })
+
+    local Tab = Window:AddTab("Main")
+
+    local AutoTypeSwitch = Tab:AddSwitch("Auto Type", function(Value)
+        Settings.AutoType = Value
+    end)
+    AutoTypeSwitch:Set(Settings.AutoType)
+
+    local AutoJoinSwitch = Tab:AddSwitch("Auto Join", function(Value)
+        Settings.AutoJoin = Value
+    end)
+    AutoJoinSwitch:Set(Settings.AutoJoin)
+
+    local TypeTimeSlider = Tab:AddSlider("Type Time", function(Value)
+        Settings.TypeTime = Value
+    end, {
+        ["min"] = 0,
+        ["max"] = 5,
+        ["readonly"] = false
+    })
+    TypeTimeSlider:Set(Settings.TypeTime)
+
+    Tab:Show()
+    library:FormatWindows()
+end
+
 while wait() do
     if CanType() then
         if not Typing then
