@@ -4378,7 +4378,7 @@ local ui_options = {
 	can_resize = true,
 }
 
-local library = loadstring("https://raw.githubusercontent.com/gwxn/egirl/main/elerium.lua")()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/gwxn/egirl/main/elerium.lua"))()
 
 local Used = {}
 local Random = Random.new()
