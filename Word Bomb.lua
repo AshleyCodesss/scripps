@@ -14,7 +14,7 @@ local MobileService = require(ClientGameScript:WaitForChild("MobileService"))
 getgenv().Settings = {
     AutoType = true,
     AutoJoin = true,
-    TypeTime = 4
+    TypeTime = 1
 }
 
 local Words = {
